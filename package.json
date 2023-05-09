@@ -1,0 +1,34 @@
+{
+  "name": "ts-esm-paths",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc --project tsconfig.build.json",
+    "start": "node -r module-alias/register ./dist/index.js",
+    "build:start": "npm run build && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "module-alias": "^2.2.2"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.3.57",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  },
+  "imports": {
+    "#components/*": [
+      "./src/components/*"
+    ]
+  },
+  "_moduleAliases": {
+    "#components": "dist/components"
+  }
+}
